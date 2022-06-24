@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.InWallet.Application", "GFT.InWallet.Application\GFT.InWallet.Application.csproj", "{74F68537-EA53-4453-B797-08DEBE698954}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.InWallet.Domain", "GFT.InWallet.Domain\GFT.InWallet.Domain.csproj", "{99266463-C98A-408D-AA04-F70097EF0468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFT.InWallet.Infra", "GFT.InWallet.Infra\GFT.InWallet.Infra.csproj", "{CE537C45-4A73-46FD-94A5-6B97D417213E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74F68537-EA53-4453-B797-08DEBE698954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F68537-EA53-4453-B797-08DEBE698954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F68537-EA53-4453-B797-08DEBE698954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F68537-EA53-4453-B797-08DEBE698954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99266463-C98A-408D-AA04-F70097EF0468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99266463-C98A-408D-AA04-F70097EF0468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99266463-C98A-408D-AA04-F70097EF0468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99266463-C98A-408D-AA04-F70097EF0468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE537C45-4A73-46FD-94A5-6B97D417213E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE537C45-4A73-46FD-94A5-6B97D417213E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE537C45-4A73-46FD-94A5-6B97D417213E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE537C45-4A73-46FD-94A5-6B97D417213E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7824936F-2136-48E7-8561-E4F89970AA59}
+	EndGlobalSection
+EndGlobal

@@ -13,7 +13,7 @@ namespace GFT.InWallet.Infra.Config
     {
         public void Configure(EntityTypeBuilder<Asset> builder)
         {
-            builder.HasNoKey();
+            builder.HasKey(c => c.Symbol);
         }
     }
 }

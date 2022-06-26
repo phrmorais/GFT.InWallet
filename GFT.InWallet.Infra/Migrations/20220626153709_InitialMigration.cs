@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GFT.InWallet.Infra.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,13 +13,13 @@ namespace GFT.InWallet.Infra.Migrations
                 name: "Asset",
                 columns: table => new
                 {
+                    Symbol = table.Column<string>(type: "text", nullable: false),
                     Company = table.Column<string>(type: "text", nullable: true),
-                    Symbol = table.Column<string>(type: "text", nullable: true),
-                    Inclusion = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    Changed = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    Inclusion = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_Asset", x => x.Symbol);
                 });
         }
 

@@ -1,4 +1,6 @@
 ﻿using Flunt.Notifications;
+using Flunt.Validations;
+using GFT.InWallet.Domain.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +14,9 @@ namespace GFT.InWallet.Domain.Entity
         public string? Company { get; set; }
         //public List<AssetMovement> AssetMovements { get; set; }
 
-        public override void Validate()
+        public override void IsValidate()
         {
-            throw new NotImplementedException();
+            AddNotifications(new AssetContract(this));
         }
     }
 }

@@ -16,6 +16,9 @@ namespace GFT.InWallet.Application.Controllers
             _logger = logger;
             _repository = repository;
         }
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<IEnumerable<object>> GetAsset()
         {
             var AssetView = _repository.ReadAll();
@@ -24,6 +27,9 @@ namespace GFT.InWallet.Application.Controllers
 
         // GET: api/Asset/5
         [HttpGet("{Symbol}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<Asset> GetAsset(string Symbol)
         {
             var Asset = _repository
@@ -38,6 +44,9 @@ namespace GFT.InWallet.Application.Controllers
 
         // PUT: api/Asset/5
         [HttpPut("{symbol}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult PutAsset(string symbol, Asset Asset)
         {
             if (symbol != Asset.Symbol)
@@ -65,15 +74,22 @@ namespace GFT.InWallet.Application.Controllers
 
         // POST: api/Asset
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<Asset> PostAsset(Asset Asset)
         {
+            Asset.IsValidate();
+            if (!string.IsNullOrEmpty(Asset.Symbol) && _repository.Exists(Asset.Symbol))
+                Asset.AddNotification("Symbol", "This symbol already exists in the database");
             if (!Asset.IsValid) return BadRequest(Asset.Notifications);
 
             _repository.Create(Asset);
-            return CreatedAtAction("GetAsset", new { Symbol = Asset.Symbol }, Asset);
+            return Created($"GetAsset/{Asset.Symbol}", Asset);
         }
         // DELETE: api/Asset/5
         [HttpDelete("{symbol}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<Asset> DeleteAsset(string symbol)
         {
             _repository.Delete(symbol);

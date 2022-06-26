@@ -9,12 +9,12 @@ namespace GFT.InWallet.Infra
     {
         public Context(DbContextOptions<Context> options) : base(options)
         {
-
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            Database.Migrate();
         }
         public IDbContextTransaction? Transaction { get; private set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
             optionsBuilder.EnableSensitiveDataLogging(true);
         }
 
@@ -77,7 +77,7 @@ namespace GFT.InWallet.Infra
             {
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Property("Inclusion").CurrentValue = DateTime.Now;
+                    entry.Property("Inclusion").CurrentValue = DateTime.Now.Date;
                 }
             };
 

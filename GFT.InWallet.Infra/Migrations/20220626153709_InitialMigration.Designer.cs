@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GFT.InWallet.Infra.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220624224255_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220626153709_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,17 +26,16 @@ namespace GFT.InWallet.Infra.Migrations
 
             modelBuilder.Entity("GFT.InWallet.Domain.Entity.Asset", b =>
                 {
-                    b.Property<DateTime?>("Changed")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("Symbol")
+                        .HasColumnType("text");
 
                     b.Property<string>("Company")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("Inclusion")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Symbol")
-                        .HasColumnType("text");
+                    b.HasKey("Symbol");
 
                     b.ToTable("Asset");
                 });

@@ -9,14 +9,13 @@ namespace GFT.InWallet.Domain.Entity
 {
     public class AssetMovement : BaseEntity
     {
-        //public Asset Asset { get; set; }
         public decimal Volume { get; set; }
         public decimal PriceAsset { get; set; }
         public decimal Fee { get; set; }
         public char Operation { get; set; }
         public decimal Total { get; set; }
 
-        public override void Validate()
+        public override void IsValidate()
         {
             throw new NotImplementedException();
         }

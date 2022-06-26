@@ -23,7 +23,7 @@ namespace GFT.InWallet.Infra
             modelBuilder.Ignore<Notification>();
 
             modelBuilder.ApplyConfiguration(new AssetConfig());
-            //modelBuilder.ApplyConfiguration(new AssetMovementConfig());
+            modelBuilder.ApplyConfiguration(new AssetMovementConfig());
 
             base.OnModelCreating(modelBuilder);
         }

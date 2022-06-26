@@ -12,7 +12,6 @@ namespace GFT.InWallet.Domain.Entity
     public class Asset : BaseEntity
     {
         public string? Company { get; set; }
-        //public List<AssetMovement> AssetMovements { get; set; }
 
         public override void IsValidate()
         {

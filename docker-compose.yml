@@ -3,8 +3,10 @@ version: '3.5'
 services:
   postgres:
     container_name: postgres_container
+    hostname: postgresHost
     image: postgres
     environment:
+      HOSTNAME: postgresHost
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespw}
       PGDATA: /data/postgres

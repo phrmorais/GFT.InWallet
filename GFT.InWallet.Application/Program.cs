@@ -1,9 +1,10 @@
 using GFT.InWallet.Infra;
 using GFT.InWallet.Infra.Repository;
 using GFT.InWallet.Infra.Repository.Interface;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
-var builder = WebApplication.CreateBuilder(args);
 
+var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<Context>(options =>
@@ -33,3 +34,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+public partial class Program { }

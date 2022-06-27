@@ -13,7 +13,7 @@ namespace GFT.InWallet.Business.YahooRequest
 {
     public class GetInformation
     {
-        public async Task<ICollection<Data>?> GetRealtimePrices(string symbol)
+        public async Task<Data?> GetRealtimePrices(string symbol)
         {
             return (await "https://alpha.financeapi.net"
                 .AppendPathSegment("market")
@@ -21,7 +21,7 @@ namespace GFT.InWallet.Business.YahooRequest
                 .SetQueryParam("symbols", symbol)
                 .WithHeader("x-api-key", "rhjdrEKhxg75lU1Zqa0sNb1ILrz2462ELQIoWzi0")
                 .GetJsonAsync<RealTimePrice>())
-                .Data;
+                .Data.FirstOrDefault();
         }
     }
 }

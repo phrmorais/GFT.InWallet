@@ -3,6 +3,7 @@ using System;
 using GFT.InWallet.Infra;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GFT.InWallet.Infra.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220627145618_AlterItensAssetManager")]
+    partial class AlterItensAssetManager
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,12 +42,6 @@ namespace GFT.InWallet.Infra.Migrations
 
             modelBuilder.Entity("GFT.InWallet.Domain.Entity.AssetMovement", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
                     b.Property<double>("Fee")
                         .HasColumnType("double precision");
 
@@ -69,8 +65,6 @@ namespace GFT.InWallet.Infra.Migrations
 
                     b.Property<double>("Volume")
                         .HasColumnType("double precision");
-
-                    b.HasKey("Id");
 
                     b.ToTable("AssetMovement");
                 });

@@ -13,7 +13,7 @@ namespace GFT.InWallet.Domain.Entity
     {
         public string? Company { get; set; }
 
-        public override void IsValidate()
+        public override void Validate()
         {
             AddNotifications(new AssetContract(this));
         }

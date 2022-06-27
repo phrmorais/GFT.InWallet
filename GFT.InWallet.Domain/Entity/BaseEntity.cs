@@ -13,7 +13,6 @@ namespace GFT.InWallet.Domain.Entity
         public string? Symbol { get; set; }
         [JsonIgnore]
         public DateTime Inclusion { get; set; }
-        
-        public abstract void IsValidate();
+        public abstract void Validate();
     }
 }

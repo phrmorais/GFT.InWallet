@@ -1,3 +1,4 @@
+using GFT.InWallet.Business.Core;
 using GFT.InWallet.Domain.Entity;
 using GFT.InWallet.Infra.Repository.Interface;
 using Microsoft.AspNetCore.Mvc;
@@ -47,12 +48,15 @@ namespace GFT.InWallet.Application.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult PutAssetMovement(string symbol, AssetMovement AssetMovement)
+        public async Task<IActionResult> PutAssetMovementAsync(string symbol, AssetMovement AssetMovement)
         {
             if (symbol != AssetMovement.Symbol)
             {
                 return BadRequest();
             }
+            AssetMovement.Validate();
+            await AssetMovement.GetCotation();
+            if (!AssetMovement.IsValid) return BadRequest(AssetMovement.Notifications);
             try
             {
                 _repository.Update(AssetMovement);
@@ -76,11 +80,10 @@ namespace GFT.InWallet.Application.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<AssetMovement> PostAssetMovement(AssetMovement AssetMovement)
+        public async Task<ActionResult<AssetMovement>> PostAssetMovementAsync(AssetMovement AssetMovement)
         {
-            AssetMovement.IsValidate();
-            if (!string.IsNullOrEmpty(AssetMovement.Symbol) && _repository.Exists(AssetMovement.Symbol))
-                AssetMovement.AddNotification("Symbol", "This symbol already exists in the database");
+            AssetMovement.Validate();
+            await AssetMovement.GetCotation();
             if (!AssetMovement.IsValid) return BadRequest(AssetMovement.Notifications);
 
             _repository.Create(AssetMovement);

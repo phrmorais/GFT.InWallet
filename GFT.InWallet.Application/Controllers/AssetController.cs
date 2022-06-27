@@ -78,7 +78,7 @@ namespace GFT.InWallet.Application.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<Asset> PostAsset(Asset Asset)
         {
-            Asset.IsValidate();
+            Asset.Validate();
             if (!string.IsNullOrEmpty(Asset.Symbol) && _repository.Exists(Asset.Symbol))
                 Asset.AddNotification("Symbol", "This symbol already exists in the database");
             if (!Asset.IsValid) return BadRequest(Asset.Notifications);

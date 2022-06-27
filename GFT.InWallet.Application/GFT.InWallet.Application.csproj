@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,8 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GFT.InWallet.Business\GFT.InWallet.Business.csproj" />
     <ProjectReference Include="..\GFT.InWallet.Domain\GFT.InWallet.Domain.csproj" />
     <ProjectReference Include="..\GFT.InWallet.Infra\GFT.InWallet.Infra.csproj" />
   </ItemGroup>
-
+ <ItemGroup>
+    <InternalsVisibleTo Include="..\GFT.InWallet.Test\GFT.InWallet.Test.csproj"/>
+  </ItemGroup>
 </Project>

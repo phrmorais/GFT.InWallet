@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["GFT.InWallet.Application/GFT.InWallet.Application.csproj", "GFT.InWallet.Application/"]
+COPY ["GFT.InWallet.Application.csproj", "GFT.InWallet.Application/"]
 RUN dotnet restore "GFT.InWallet.Application/GFT.InWallet.Application.csproj"
 COPY . .
 WORKDIR "/src/GFT.InWallet.Application"

@@ -15,7 +15,7 @@ namespace GFT.InWallet.Infra
         public IDbContextTransaction? Transaction { get; private set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.EnableSensitiveDataLogging(true);
+           
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

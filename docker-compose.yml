@@ -29,9 +29,12 @@ services:
         - "80:80"
     networks:
       - postgres
+    links:
+      - postgres
 networks:
   postgres:
     driver: bridge
+    external: true
 
 volumes:
     postgres:

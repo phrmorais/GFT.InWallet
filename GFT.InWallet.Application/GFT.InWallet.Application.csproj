@@ -25,9 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GFT.InWallet.Business\GFT.InWallet.Business.csproj" />
-    <ProjectReference Include="..\GFT.InWallet.Domain\GFT.InWallet.Domain.csproj" />
-    <ProjectReference Include="..\GFT.InWallet.Infra\GFT.InWallet.Infra.csproj" />
+    <ProjectReference Include="..\..\GFT.InWallet.Business\GFT.InWallet.Business.csproj" />
+    <ProjectReference Include="..\..\GFT.InWallet.Domain\GFT.InWallet.Domain.csproj" />
+    <ProjectReference Include="..\..\GFT.InWallet.Infra\GFT.InWallet.Infra.csproj" />
   </ItemGroup>
  <ItemGroup>
     <InternalsVisibleTo Include="..\GFT.InWallet.Test\GFT.InWallet.Test.csproj"/>

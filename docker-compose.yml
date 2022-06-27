@@ -20,8 +20,6 @@ services:
   
   inwallet:
     image: ${DOCKER_REGISTRY-}inwallet
-    environment:
-            - ASPNETCORE_ENVIRONMENT=Development
     build:
       context: .
       dockerfile: GFT.InWallet.Application/Dockerfile

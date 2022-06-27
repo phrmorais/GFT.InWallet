@@ -34,7 +34,6 @@ services:
 networks:
   postgres:
     driver: bridge
-    external: true
 
 volumes:
     postgres:

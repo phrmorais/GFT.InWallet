@@ -15,9 +15,7 @@ services:
     ports:
       - "127.0.0.1:5432:5432"
     network_mode: 
-      "host"
-    networks:
-      - postgres
+      "host"    
     restart: unless-stopped
 
   
@@ -27,16 +25,14 @@ services:
       context: .
       dockerfile: GFT.InWallet.Application/Dockerfile
     ports:
-        - "80:80"
-    networks:
-      - postgres
+        - "80:80"    
     links:
       - postgres
+
 networks:
   postgres:
     driver: bridge
 
 volumes:
     postgres:
-    pgadmin:
     inwallet:

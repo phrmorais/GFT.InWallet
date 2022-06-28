@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   application:
-    image: ${DOCKER_REGISTRY-}inwallet:latest
+    image: inwallet
     build:
       context: .
       dockerfile: GFT.InWallet.Application/Dockerfile

@@ -2,7 +2,7 @@
 
 API feito em C# .net 6 capaz de gerenciarr uma carteira de investimentos.
 
-Acesso em http://ec2-3-95-202-188.compute-1.amazonaws.com/swagger/index.html
+Acesso em http://54.174.224.2:49158/swagger/index.html
 
 ### Cadastro de Ações
 ### Registro de Compra e venda

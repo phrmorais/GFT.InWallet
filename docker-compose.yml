@@ -8,8 +8,8 @@ services:
       dockerfile: GFT.InWallet.Application/Dockerfile
     ports:
         - "80:80"    
-     networks:
-      - myApp-network
+    networks:
+        - myApp-network
   db:
      image: postgres:9.6.1
      # Make Postgres log to a file.

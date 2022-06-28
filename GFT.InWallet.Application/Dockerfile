@@ -1,5 +1,9 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 FROM postgres:latest
+ENV POSTGRES_PASSWORD=postgrespw
+EXPOSE 5432
+COPY pg-setup.sql /docker-entrypoint-initdb.d/
+
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80

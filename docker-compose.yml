@@ -8,25 +8,3 @@ services:
       dockerfile: GFT.InWallet.Application/Dockerfile
     ports:
         - "80:80"    
-    networks:
-        - myApp-network
-  db:
-    container_name: postgres_container
-    hostname: postgresHost
-    image: postgres
-    environment:
-      HOSTNAME: postgresForMyApp
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespw}
-      PGDATA: /data/postgres
-    ports:
-      - "5432:5432"
-    networks:
-       myApp-network:
-         aliases:
-           - postgresForMyApp
-networks:
-  myApp-network:
-    driver: bridge
-volumes:
-  postgresVolume:

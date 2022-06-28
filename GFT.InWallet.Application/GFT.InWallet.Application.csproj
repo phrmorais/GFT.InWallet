@@ -30,6 +30,7 @@
     <ProjectReference Include="..\GFT.InWallet.Infra\GFT.InWallet.Infra.csproj" />
   </ItemGroup>
  <ItemGroup>
-    <InternalsVisibleTo Include="..\GFT.InWallet.Test\GFT.InWallet.Test.csproj"/>
+    <InternalsVisibleTo Include="..\GFT.InWallet.Test\GFT.InWallet.Test.csproj" />
   </ItemGroup>
+ <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 </Project>

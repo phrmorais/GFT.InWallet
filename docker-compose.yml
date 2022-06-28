@@ -19,8 +19,6 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespw}
       PGDATA: /data/postgres
-    volumes:
-       - postgres:/data/postgres
     ports:
       - "5432:5432"
     networks:

@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.InWallet.Domain", "GFT.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.InWallet.Infra", "GFT.InWallet.Infra\GFT.InWallet.Infra.csproj", "{CE537C45-4A73-46FD-94A5-6B97D417213E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFT.InWallet.Business", "GFT.InWallet.Business\GFT.InWallet.Business.csproj", "{54E500DB-ACCB-44EB-96A3-6C9A9BC2703C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.InWallet.Business", "GFT.InWallet.Business\GFT.InWallet.Business.csproj", "{54E500DB-ACCB-44EB-96A3-6C9A9BC2703C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFT.InWallet.Test", "GFT.InWallet.Test\GFT.InWallet.Test.csproj", "{6CF5EAD4-038B-418E-B993-BF699AF96617}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.InWallet.Test", "GFT.InWallet.Test\GFT.InWallet.Test.csproj", "{6CF5EAD4-038B-418E-B993-BF699AF96617}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0E8FD23A-8BD4-4E30-89F9-2C9103F6ED0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6CF5EAD4-038B-418E-B993-BF699AF96617}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CF5EAD4-038B-418E-B993-BF699AF96617}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CF5EAD4-038B-418E-B993-BF699AF96617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E8FD23A-8BD4-4E30-89F9-2C9103F6ED0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E8FD23A-8BD4-4E30-89F9-2C9103F6ED0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E8FD23A-8BD4-4E30-89F9-2C9103F6ED0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E8FD23A-8BD4-4E30-89F9-2C9103F6ED0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

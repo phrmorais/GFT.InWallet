@@ -1,10 +1,8 @@
-version: '3.5'
+version: '3.4'
 
 services:
-  application:
-    image: inwallet
+  gft.inwallet.application:
+    image: ${DOCKER_REGISTRY-}gftinwalletapplication
     build:
       context: .
       dockerfile: GFT.InWallet.Application/Dockerfile
-    ports:
-        - "80:80"    
